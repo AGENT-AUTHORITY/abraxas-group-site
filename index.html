@@ -424,7 +424,7 @@
     color: var(--crema-oscuro);
   }
 
-  /* NUEVA SECCIÓN: AUTOMATIZACIÓN & WORKFLOWS (No solo closers) */
+  /* WORKFLOWS - AUTOMATIZACIÓN */
   .workflows {
     padding: 8rem 4rem;
     background: var(--negro);
@@ -589,19 +589,16 @@
     gap: 1rem;
     box-shadow: 0 20px 35px -15px rgba(0,0,0,0.5);
     transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+  .video-3d-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .video-3d-container:hover {
     transform: scale(1.01);
     border-color: var(--verde-neon);
-  }
-  .video-3d-container .placeholder-icon {
-    font-size: 3rem;
-    opacity: 0.5;
-  }
-  .video-3d-note {
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    color: var(--verde-neon);
   }
 
   /* TESTIMONIOS */
@@ -901,7 +898,10 @@
   </div>
   <div class="hero-right">
     <div class="hero-video-wrapper">
-      <video autoplay muted loop playsinline src="video.mp4"></video>
+      <video autoplay muted loop playsinline src="video.mp4" poster="oscar-profile.jpg">
+        <source src="video.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
       <div class="hero-img-overlay"></div>
     </div>
     <div class="hero-img-accent">Abraxas Group · Premium Closer</div>
@@ -1063,7 +1063,7 @@
   </div>
 </section>
 
-<!-- NUEVA SECCIÓN: WORKFLOWS COMPLETOS (Automatización & IA) -->
+<!-- WORKFLOWS COMPLETOS (Automatización & IA) -->
 <section class="workflows" id="workflows">
   <div class="workflows-inner">
     <div class="section-label fade-up">Más allá del cierre</div>
@@ -1230,15 +1230,16 @@
   </div>
 </section>
 
-<!-- VIDEO 3D (AL FINAL) - CON TÍTULO MEJORADO -->
+<!-- VIDEO 3D (AL FINAL) - oficina3D.MP4 -->
 <section class="video-3d-section" id="video-3d">
   <div class="testimonios-inner">
     <div class="section-label fade-up">Experiencia Inmersiva</div>
     <h2 class="section-title fade-up stagger-1">Sumérgete en nuestro <em>universo de trabajo</em></h2>
     <div class="video-3d-container fade-up stagger-2">
-      <div class="placeholder-icon">🌀</div>
-      <div>Animación 3D • Oficina en rotación • Entorno inmersivo</div>
-      <div class="video-3d-note">(Aquí se reproduce tu video 3D de 10 segundos — oficina girando)</div>
+      <video controls autoplay muted loop playsinline>
+        <source src="oficina3D.MP4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
     </div>
   </div>
 </section>
