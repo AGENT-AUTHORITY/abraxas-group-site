@@ -3,11 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- FIX 1: Meta description para SEO -->
-<meta name="description" content="Abraxas Group — Closer de Alto Rendimiento. Cerramos ventas complejas con estrategia, psicología y precisión. 83% de tasa de cierre. Más de $5M en ventas cerradas.">
-<title>Abraxas Group — Closer de Alto Rendimiento</title>
-<!-- FIX 2: Favicon SVG inline con inicial del logo -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%231a3a2a'/><text y='.9em' font-size='65' x='50%' text-anchor='middle' fill='%23f0ead6' font-family='serif'>A</text></svg>">
+<title>Abraxas Group — Closer de Alto Rendimiento + Workflows IA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -26,6 +22,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   html { scroll-behavior: smooth; }
 
   body {
@@ -35,9 +32,6 @@
     cursor: none;
     overflow-x: hidden;
   }
-
-  /* FIX 3: cursor none global para todos los interactivos */
-  a, button { cursor: none; }
 
   /* CURSOR */
   .cursor {
@@ -76,7 +70,10 @@
     background: linear-gradient(to bottom, rgba(8,10,9,0.95) 0%, transparent 100%);
     backdrop-filter: blur(2px);
   }
-  .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.75rem;
+    text-decoration: none;
+  }
   .logo-icon {
     width: 44px; height: 44px;
     background: var(--verde);
@@ -104,7 +101,9 @@
     font-family: 'DM Mono', monospace;
     font-size: 0.7rem; letter-spacing: 0.15em;
     text-transform: uppercase; color: var(--crema-oscuro);
-    text-decoration: none; transition: color 0.3s; position: relative;
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
   }
   .nav-links a::after {
     content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
@@ -117,8 +116,10 @@
     background: transparent;
     border: 1px solid var(--verde-neon) !important;
     color: var(--verde-neon) !important;
-    padding: 0.5rem 1.2rem; border-radius: 2px;
-    font-size: 0.65rem !important; transition: background 0.3s !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2px;
+    font-size: 0.65rem !important;
+    transition: background 0.3s !important;
   }
   .nav-cta:hover { background: rgba(74,158,107,0.15) !important; }
   .nav-cta::after { display: none !important; }
@@ -126,11 +127,14 @@
   /* HERO */
   .hero {
     min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 1fr;
-    position: relative; overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
   }
   .hero-left {
-    display: flex; flex-direction: column; justify-content: center;
+    display: flex; flex-direction: column;
+    justify-content: center;
     padding: 8rem 4rem 4rem 4rem;
     position: relative; z-index: 2;
   }
@@ -141,55 +145,79 @@
     margin-bottom: 2rem;
     display: flex; align-items: center; gap: 1rem;
   }
-  .hero-tag::before { content: ''; width: 30px; height: 1px; background: var(--verde-neon); }
+  .hero-tag::before {
+    content: ''; width: 30px; height: 1px; background: var(--verde-neon);
+  }
   .hero-headline {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(3rem, 5vw, 5.5rem);
-    font-weight: 300; line-height: 1.05; color: var(--crema); margin-bottom: 1.5rem;
+    font-weight: 300; line-height: 1.05;
+    color: var(--crema);
+    margin-bottom: 1.5rem;
   }
-  .hero-headline em { font-style: italic; color: var(--gold); }
-  .hero-headline strong { font-weight: 600; display: block; }
+  .hero-headline em {
+    font-style: italic; color: var(--gold);
+  }
+  .hero-headline strong {
+    font-weight: 600;
+    display: block;
+  }
   .hero-sub {
     font-family: 'DM Mono', monospace;
     font-size: 0.75rem; line-height: 1.8;
-    color: var(--crema-oscuro); max-width: 420px; margin-bottom: 3rem;
+    color: var(--crema-oscuro); max-width: 420px;
+    margin-bottom: 3rem;
   }
   .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
   .btn-primary {
-    background: var(--verde-neon); color: var(--negro);
+    background: var(--verde-neon);
+    color: var(--negro);
     padding: 1rem 2.5rem;
     font-family: 'Syne', sans-serif;
     font-weight: 700; font-size: 0.75rem;
     letter-spacing: 0.15em; text-transform: uppercase;
     text-decoration: none; border: none;
-    transition: background 0.3s, transform 0.2s; display: inline-block;
+    cursor: none;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
   }
   .btn-primary:hover { background: var(--gold); transform: translateY(-2px); }
   .btn-secondary {
-    color: var(--crema-oscuro); font-family: 'DM Mono', monospace;
-    font-size: 0.7rem; letter-spacing: 0.1em; text-decoration: none;
-    display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s;
+    color: var(--crema-oscuro);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.1em;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 0.5rem;
+    transition: color 0.3s;
   }
   .btn-secondary:hover { color: var(--crema); }
   .btn-secondary .arrow { transition: transform 0.3s; }
   .btn-secondary:hover .arrow { transform: translateX(4px); }
+
   .hero-stats {
-    margin-top: 4rem; display: flex; gap: 3rem;
-    padding-top: 2rem; border-top: 1px solid rgba(74,158,107,0.2);
+    margin-top: 4rem;
+    display: flex; gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(74,158,107,0.2);
   }
   .stat-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem; font-weight: 300; color: var(--gold); line-height: 1;
+    font-size: 2.5rem; font-weight: 300; color: var(--gold);
+    line-height: 1;
   }
   .stat-label {
     font-family: 'DM Mono', monospace;
     font-size: 0.6rem; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--crema-oscuro); margin-top: 0.25rem;
+    text-transform: uppercase; color: var(--crema-oscuro);
+    margin-top: 0.25rem;
   }
-  .hero-right { position: relative; overflow: hidden; }
 
-  /* FIX 4: eliminada clase .hero-img-wrapper (CSS muerto), queda solo .hero-video-wrapper */
-  .hero-video-wrapper { position: absolute; inset: 0; }
+  .hero-right {
+    position: relative; overflow: hidden;
+  }
+  .hero-video-wrapper {
+    position: absolute; inset: 0;
+  }
   .hero-video-wrapper video {
     width: 100%; height: 100%; object-fit: cover;
     filter: brightness(0.7) contrast(1.1) saturate(0.9);
@@ -200,18 +228,22 @@
                 linear-gradient(to top, var(--negro) 0%, transparent 30%);
   }
   .hero-img-accent {
-    position: absolute; top: 50%; right: 2rem; transform: translateY(-50%);
+    position: absolute; top: 50%; right: 2rem;
+    transform: translateY(-50%);
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.65rem; letter-spacing: 0.4em;
     text-transform: uppercase; color: rgba(201,168,76,0.5);
-    writing-mode: vertical-rl; text-orientation: mixed; z-index: 2;
+    writing-mode: vertical-rl; text-orientation: mixed;
   }
+
+  /* SCROLL INDICATOR */
   .scroll-indicator {
     position: absolute; bottom: 2.5rem; left: 4rem;
     display: flex; align-items: center; gap: 1rem;
     font-family: 'DM Mono', monospace;
     font-size: 0.6rem; letter-spacing: 0.3em;
-    text-transform: uppercase; color: var(--crema-oscuro); z-index: 5;
+    text-transform: uppercase; color: var(--crema-oscuro);
+    z-index: 5;
   }
   .scroll-line {
     width: 40px; height: 1px; background: var(--verde-neon);
@@ -224,17 +256,24 @@
 
   /* SECTION STYLES */
   section { position: relative; }
+
   .section-label {
     font-family: 'DM Mono', monospace;
     font-size: 0.6rem; letter-spacing: 0.4em;
-    text-transform: uppercase; color: var(--verde-neon); margin-bottom: 1.5rem;
+    text-transform: uppercase; color: var(--verde-neon);
+    margin-bottom: 1.5rem;
     display: flex; align-items: center; gap: 1rem;
   }
-  .section-label::before { content: ''; width: 20px; height: 1px; background: var(--verde-neon); }
+  .section-label::before {
+    content: ''; width: 20px; height: 1px; background: var(--verde-neon);
+  }
+
   .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.2rem, 3.5vw, 3.8rem);
-    font-weight: 300; color: var(--crema); line-height: 1.1; margin-bottom: 1.5rem;
+    font-weight: 300; color: var(--crema);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
   }
   .section-title em { font-style: italic; color: var(--gold); }
 
@@ -247,41 +286,56 @@
   }
   .manifesto-inner {
     max-width: 1200px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: center;
+    display: grid; grid-template-columns: 1fr 2fr; gap: 6rem;
+    align-items: center;
   }
   .manifesto-quote {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-    font-weight: 300; font-style: italic; color: var(--crema); line-height: 1.3;
-    border-left: 2px solid var(--verde-neon); padding-left: 2rem;
+    font-weight: 300; font-style: italic;
+    color: var(--crema); line-height: 1.3;
+    border-left: 2px solid var(--verde-neon);
+    padding-left: 2rem;
   }
   .manifesto-quote span { color: var(--gold); }
+
   .manifesto-body p {
     font-family: 'DM Mono', monospace;
-    font-size: 0.78rem; line-height: 2; color: var(--crema-oscuro); margin-bottom: 1.5rem;
+    font-size: 0.78rem; line-height: 2;
+    color: var(--crema-oscuro);
+    margin-bottom: 1.5rem;
   }
   .manifesto-body strong { color: var(--crema); font-weight: 400; }
 
   /* SERVICIOS */
-  .servicios { padding: 8rem 4rem; max-width: 1300px; margin: 0 auto; }
+  .servicios {
+    padding: 8rem 4rem;
+    max-width: 1300px; margin: 0 auto;
+  }
   .servicios-header {
     display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
     margin-bottom: 5rem; align-items: end;
   }
   .servicios-intro {
     font-family: 'DM Mono', monospace;
-    font-size: 0.75rem; line-height: 1.9; color: var(--crema-oscuro);
+    font-size: 0.75rem; line-height: 1.9;
+    color: var(--crema-oscuro);
   }
+
   .servicios-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
-    background: rgba(74,158,107,0.1); border: 1px solid rgba(74,158,107,0.1);
+    background: rgba(74,158,107,0.1);
+    border: 1px solid rgba(74,158,107,0.1);
   }
   .servicio-card {
-    background: var(--negro-card); padding: 3rem 2.5rem;
-    transition: background 0.4s; position: relative; overflow: hidden;
+    background: var(--negro-card);
+    padding: 3rem 2.5rem;
+    transition: background 0.4s;
+    position: relative; overflow: hidden;
   }
   .servicio-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
     height: 2px; background: var(--verde-neon);
     transform: scaleX(0); transition: transform 0.4s;
   }
@@ -289,121 +343,265 @@
   .servicio-card:hover::before { transform: scaleX(1); }
   .servicio-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem; font-weight: 300; color: rgba(74,158,107,0.12);
-    line-height: 1; margin-bottom: 1.5rem; transition: color 0.4s;
+    font-size: 4rem; font-weight: 300;
+    color: rgba(74,158,107,0.12);
+    line-height: 1; margin-bottom: 1.5rem;
+    transition: color 0.4s;
   }
   .servicio-card:hover .servicio-num { color: rgba(74,158,107,0.25); }
   .servicio-title {
-    font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 600;
-    color: var(--crema); margin-bottom: 1rem; letter-spacing: 0.05em;
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem; font-weight: 600;
+    color: var(--crema); margin-bottom: 1rem;
+    letter-spacing: 0.05em;
   }
   .servicio-desc {
     font-family: 'DM Mono', monospace;
-    font-size: 0.68rem; line-height: 1.9; color: var(--crema-oscuro);
+    font-size: 0.68rem; line-height: 1.9;
+    color: var(--crema-oscuro);
   }
-  .servicio-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .servicio-tags {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
   .tag {
-    font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em;
-    text-transform: uppercase; border: 1px solid rgba(74,158,107,0.3);
-    color: var(--verde-neon); padding: 0.3rem 0.7rem; border-radius: 1px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem; letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid rgba(74,158,107,0.3);
+    color: var(--verde-neon);
+    padding: 0.3rem 0.7rem;
+    border-radius: 1px;
   }
 
   /* PROCESO */
   .proceso {
-    padding: 8rem 4rem; background: var(--negro-card);
+    padding: 8rem 4rem;
+    background: var(--negro-card);
     border-top: 1px solid rgba(74,158,107,0.1);
   }
   .proceso-inner { max-width: 1200px; margin: 0 auto; }
   .proceso-steps {
     display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 0; margin-top: 5rem; position: relative;
+    gap: 0; margin-top: 5rem;
+    position: relative;
   }
   .proceso-steps::before {
-    content: ''; position: absolute; top: 2rem; left: 0; right: 0; height: 1px;
+    content: '';
+    position: absolute; top: 2rem; left: 0; right: 0; height: 1px;
     background: linear-gradient(to right, transparent, rgba(74,158,107,0.4), transparent);
   }
-  .paso { padding: 0 2rem; padding-top: 4rem; position: relative; }
+  .paso {
+    padding: 0 2rem;
+    padding-top: 4rem;
+    position: relative;
+  }
   .paso-dot {
     position: absolute; top: 1.5rem; left: 2rem;
-    width: 12px; height: 12px; border: 1px solid var(--verde-neon);
+    width: 12px; height: 12px;
+    border: 1px solid var(--verde-neon);
     border-radius: 50%; background: var(--negro-card);
   }
   .paso-dot::after {
     content: ''; position: absolute;
     top: 50%; left: 50%; transform: translate(-50%,-50%);
-    width: 4px; height: 4px; border-radius: 50%; background: var(--verde-neon);
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--verde-neon);
   }
   .paso-num {
-    font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.2em;
     color: var(--verde-neon); margin-bottom: 1rem;
   }
   .paso-title {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400;
     color: var(--crema); margin-bottom: 0.75rem;
   }
   .paso-desc {
-    font-family: 'DM Mono', monospace; font-size: 0.65rem; line-height: 1.9; color: var(--crema-oscuro);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; line-height: 1.9;
+    color: var(--crema-oscuro);
+  }
+
+  /* NUEVA SECCIÓN: AUTOMATIZACIÓN & WORKFLOWS (No solo closers) */
+  .workflows {
+    padding: 8rem 4rem;
+    background: var(--negro);
+    border-top: 1px solid rgba(74,158,107,0.1);
+    border-bottom: 1px solid rgba(74,158,107,0.1);
+  }
+  .workflows-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .workflows-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+    align-items: center;
+  }
+  .workflows-desc p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.9;
+    color: var(--crema-oscuro);
+    margin-bottom: 1.5rem;
+  }
+  .workflows-desc strong {
+    color: var(--crema);
+    font-weight: 400;
+  }
+  .tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .tech-badge {
+    background: rgba(26,58,42,0.4);
+    border: 1px solid rgba(74,158,107,0.3);
+    padding: 0.5rem 1.2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--verde-neon);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .tech-badge:hover {
+    border-color: var(--verde-neon);
+    background: rgba(74,158,107,0.1);
+    transform: translateY(-2px);
+  }
+  .workflows-image {
+    background: var(--negro-card);
+    border: 1px solid rgba(74,158,107,0.2);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .workflows-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--verde-neon), transparent);
+  }
+  .workflows-image .placeholder-icon {
+    font-size: 4rem;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  .workflows-image p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--crema-oscuro);
   }
 
   /* SOBRE MÍ */
-  /* FIX 5: section con clase propia para control de separación visual */
-  .section-sobre-mi { border-top: 1px solid rgba(74,158,107,0.08); }
   .sobre-mi {
-    padding: 8rem 4rem; max-width: 1300px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+    padding: 8rem 4rem;
+    max-width: 1300px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+    align-items: center;
   }
-  .sobre-img-wrapper { position: relative; }
+  .sobre-img-wrapper {
+    position: relative;
+  }
   .sobre-img-frame {
     position: absolute; top: -1rem; left: -1rem; right: 1rem; bottom: 1rem;
-    border: 1px solid rgba(74,158,107,0.25); pointer-events: none;
+    border: 1px solid rgba(74,158,107,0.25);
+    pointer-events: none;
   }
   .sobre-img-wrapper img {
-    width: 100%; display: block; filter: grayscale(20%) contrast(1.05); position: relative; z-index: 1;
+    width: 100%; display: block;
+    filter: grayscale(20%) contrast(1.05);
+    position: relative; z-index: 1;
   }
   .sobre-badge {
     position: absolute; bottom: -1.5rem; right: -1.5rem; z-index: 2;
-    background: var(--verde); border: 1px solid var(--verde-neon);
-    padding: 1.5rem; text-align: center;
+    background: var(--verde);
+    border: 1px solid var(--verde-neon);
+    padding: 1.5rem;
+    text-align: center;
   }
   .badge-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem; font-weight: 300; color: var(--gold); line-height: 1;
+    font-size: 2.5rem; font-weight: 300; color: var(--gold);
+    line-height: 1;
   }
   .badge-text {
-    font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.2em;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem; letter-spacing: 0.2em;
     text-transform: uppercase; color: var(--crema-oscuro);
   }
+  .sobre-content { }
   .sobre-bio {
-    font-family: 'DM Mono', monospace; font-size: 0.75rem; line-height: 2;
-    color: var(--crema-oscuro); margin-bottom: 1.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem; line-height: 2;
+    color: var(--crema-oscuro);
+    margin-bottom: 1.5rem;
   }
   .sobre-bio strong { color: var(--crema); font-weight: 400; }
-  .habilidades { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+
+  .habilidades {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin-top: 2rem;
+  }
   .habilidad {
     display: flex; align-items: center; gap: 0.75rem;
-    font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--crema-oscuro);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; color: var(--crema-oscuro);
   }
   .habilidad::before {
     content: ''; width: 6px; height: 6px;
-    border: 1px solid var(--verde-neon); border-radius: 50%; flex-shrink: 0;
+    border: 1px solid var(--verde-neon); border-radius: 50%;
+    flex-shrink: 0;
   }
 
-  /* RESULTADOS */
-  .resultados { padding: 8rem 4rem; max-width: 1200px; margin: 0 auto; text-align: center; }
-  .resultados-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 1px; background: rgba(74,158,107,0.15);
-    border: 1px solid rgba(74,158,107,0.15); margin-top: 4rem;
+  /* VIDEO 3D SECTION */
+  .video-3d-section {
+    padding: 6rem 4rem;
+    background: var(--negro-card);
+    border-top: 1px solid rgba(74,158,107,0.1);
+    border-bottom: 1px solid rgba(74,158,107,0.1);
   }
-  .resultado { background: var(--negro); padding: 3rem 2rem; transition: background 0.3s; }
-  .resultado:hover { background: rgba(26,58,42,0.3); }
-  .resultado-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; color: var(--gold); line-height: 1;
+  .video-3d-container {
+    max-width: 1000px;
+    margin: 3rem auto 0;
+    aspect-ratio: 16 / 9;
+    background: #0a0f0c;
+    border: 1px solid rgba(74,158,107,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--crema-oscuro);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    text-align: center;
+    gap: 1rem;
+    box-shadow: 0 20px 35px -15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
   }
-  .resultado-label {
-    font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--crema-oscuro); margin-top: 0.75rem;
+  .video-3d-container:hover {
+    transform: scale(1.01);
+    border-color: var(--verde-neon);
+  }
+  .video-3d-container .placeholder-icon {
+    font-size: 3rem;
+    opacity: 0.5;
+  }
+  .video-3d-note {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--verde-neon);
   }
 
   /* TESTIMONIOS */
@@ -413,128 +611,208 @@
     border-top: 1px solid rgba(74,158,107,0.1);
   }
   .testimonios-inner { max-width: 1200px; margin: 0 auto; }
-  .testimonios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+  .testimonios-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 4rem;
+  }
   .testimonio {
-    background: rgba(8,10,9,0.6); border: 1px solid rgba(74,158,107,0.15);
-    padding: 2.5rem; position: relative; transition: border-color 0.3s;
+    background: rgba(8,10,9,0.6);
+    border: 1px solid rgba(74,158,107,0.15);
+    padding: 2.5rem;
+    position: relative;
+    transition: border-color 0.3s;
   }
   .testimonio:hover { border-color: rgba(74,158,107,0.4); }
   .testimonio-quote-icon {
-    font-family: 'Cormorant Garamond', serif; font-size: 4rem; line-height: 1;
-    color: rgba(74,158,107,0.2); margin-bottom: 1rem; display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem; line-height: 1;
+    color: rgba(74,158,107,0.2);
+    margin-bottom: 1rem; display: block;
   }
   .testimonio-text {
-    font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic;
-    color: var(--crema); line-height: 1.7; margin-bottom: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-style: italic;
+    color: var(--crema); line-height: 1.7;
+    margin-bottom: 1.5rem;
   }
   .testimonio-author {
     display: flex; align-items: center; gap: 1rem;
-    padding-top: 1rem; border-top: 1px solid rgba(74,158,107,0.15);
+    padding-top: 1rem;
+    border-top: 1px solid rgba(74,158,107,0.15);
   }
   .author-avatar {
-    width: 36px; height: 36px; border-radius: 50%; background: var(--verde);
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--verde);
     border: 1px solid var(--verde-neon);
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--crema); flex-shrink: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem; color: var(--crema);
+    flex-shrink: 0;
   }
-  .author-name { font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 600; color: var(--crema); }
-  .author-role { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--verde-neon); margin-top: 0.1rem; }
+  .author-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem; font-weight: 600;
+    color: var(--crema);
+  }
+  .author-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; color: var(--verde-neon);
+    margin-top: 0.1rem;
+  }
 
-  /* VIDEO 3D SECTION — FIX 6: reemplaza el placeholder por video real */
-  .video-3d-section {
-    padding: 8rem 4rem; background: var(--negro-card);
-    border-top: 1px solid rgba(74,158,107,0.1); border-bottom: 1px solid rgba(74,158,107,0.1);
+  /* RESULTADOS */
+  .resultados {
+    padding: 8rem 4rem;
+    max-width: 1200px; margin: 0 auto; text-align: center;
   }
-  .video-3d-wrapper {
-    max-width: 1000px; margin: 3rem auto 0; position: relative;
-    border: 1px solid rgba(74,158,107,0.3);
-    box-shadow: 0 20px 60px -20px rgba(0,0,0,0.7); background: #000;
+  .resultados-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: rgba(74,158,107,0.15);
+    border: 1px solid rgba(74,158,107,0.15);
+    margin-top: 4rem;
   }
-  .video-3d-wrapper video { width: 100%; display: block; aspect-ratio: 16/9; }
-  .video-3d-label {
-    position: absolute; bottom: 1rem; left: 1.5rem;
-    font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.25em;
-    text-transform: uppercase; color: rgba(201,168,76,0.7); pointer-events: none;
+  .resultado {
+    background: var(--negro);
+    padding: 3rem 2rem;
+    transition: background 0.3s;
+  }
+  .resultado:hover { background: rgba(26,58,42,0.3); }
+  .resultado-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 300; color: var(--gold);
+    line-height: 1;
+  }
+  .resultado-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--crema-oscuro);
+    margin-top: 0.75rem;
   }
 
   /* CTA FINAL */
   .cta-final {
-    padding: 8rem 4rem; background: var(--negro-card);
+    padding: 8rem 4rem;
+    background: var(--negro-card);
     border-top: 1px solid rgba(74,158,107,0.15);
-    text-align: center; position: relative; overflow: hidden;
+    text-align: center;
+    position: relative; overflow: hidden;
   }
   .cta-final::before {
-    content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    content: '';
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
     width: 600px; height: 600px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(26,58,42,0.4) 0%, transparent 70%); pointer-events: none;
+    background: radial-gradient(circle, rgba(26,58,42,0.4) 0%, transparent 70%);
+    pointer-events: none;
   }
   .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
   .cta-eyebrow {
-    font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.4em;
-    text-transform: uppercase; color: var(--verde-neon); margin-bottom: 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--verde-neon);
+    margin-bottom: 2rem;
   }
   .cta-headline {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 4vw, 4.5rem); font-weight: 300; color: var(--crema);
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    font-weight: 300; color: var(--crema);
     line-height: 1.1; margin-bottom: 1.5rem;
   }
   .cta-headline em { font-style: italic; color: var(--gold); }
   .cta-sub {
-    font-family: 'DM Mono', monospace; font-size: 0.75rem; line-height: 1.9;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem; line-height: 1.9;
     color: var(--crema-oscuro); margin-bottom: 3rem;
   }
   .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
   .btn-ghost {
-    border: 1px solid rgba(201,168,76,0.4); color: var(--gold);
-    padding: 1rem 2.5rem; font-family: 'Syne', sans-serif;
-    font-weight: 600; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-    text-decoration: none; transition: background 0.3s, border-color 0.3s; display: inline-block;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    padding: 1rem 2.5rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600; font-size: 0.75rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s, border-color 0.3s;
+    cursor: none;
+    display: inline-block;
   }
   .btn-ghost:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
 
   /* FOOTER */
   footer {
-    background: var(--negro); border-top: 1px solid rgba(74,158,107,0.15);
-    padding: 4rem; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+    background: var(--negro);
+    border-top: 1px solid rgba(74,158,107,0.15);
+    padding: 4rem;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem; max-width: 100%;
   }
+  .footer-brand { }
   .footer-logo-text {
-    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem;
-    letter-spacing: 0.15em; text-transform: uppercase; color: var(--crema); margin-bottom: 0.5rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.1rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--crema); margin-bottom: 0.5rem;
   }
   .footer-tagline {
-    font-family: 'DM Mono', monospace; font-size: 0.65rem;
-    color: var(--verde-neon); letter-spacing: 0.1em; margin-bottom: 1.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; color: var(--verde-neon);
+    letter-spacing: 0.1em; margin-bottom: 1.5rem;
   }
   .footer-desc {
-    font-family: 'DM Mono', monospace; font-size: 0.65rem; line-height: 1.9;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; line-height: 1.9;
     color: var(--crema-oscuro); max-width: 280px;
   }
   .footer-col-title {
-    font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 700;
-    letter-spacing: 0.2em; text-transform: uppercase; color: var(--crema); margin-bottom: 1.5rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--crema); margin-bottom: 1.5rem;
   }
   .footer-links { list-style: none; }
   .footer-links li { margin-bottom: 0.75rem; }
   .footer-links a {
-    font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--crema-oscuro);
-    text-decoration: none; letter-spacing: 0.05em; transition: color 0.3s;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; color: var(--crema-oscuro);
+    text-decoration: none; letter-spacing: 0.05em;
+    transition: color 0.3s;
   }
   .footer-links a:hover { color: var(--verde-neon); }
   .footer-bottom {
-    background: var(--negro); border-top: 1px solid rgba(74,158,107,0.08);
-    padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 1rem;
+    background: var(--negro);
+    border-top: 1px solid rgba(74,158,107,0.08);
+    padding: 1.5rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
   .footer-copy {
-    font-family: 'DM Mono', monospace; font-size: 0.6rem;
-    color: rgba(200,191,164,0.4); letter-spacing: 0.1em;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; color: rgba(200,191,164,0.4);
+    letter-spacing: 0.1em;
   }
-  .footer-domain { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--verde-neon); letter-spacing: 0.15em; }
-  .powered { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: rgba(200,191,164,0.5); letter-spacing: 0.1em; }
+  .footer-domain {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; color: var(--verde-neon);
+    letter-spacing: 0.15em;
+  }
+  .powered {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: rgba(200,191,164,0.5);
+    letter-spacing: 0.1em;
+  }
 
   /* ANIMATIONS */
-  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
+
   .stagger-1 { transition-delay: 0.1s; }
   .stagger-2 { transition-delay: 0.2s; }
   .stagger-3 { transition-delay: 0.3s; }
@@ -552,7 +830,8 @@
     .servicios-header { grid-template-columns: 1fr; }
     .servicios-grid { grid-template-columns: 1fr; }
     .servicios, .resultados { padding: 5rem 2rem; }
-    .proceso, .manifesto, .testimonios, .cta-final, .video-3d-section { padding: 5rem 2rem; }
+    .proceso, .manifesto, .testimonios, .cta-final, .video-3d-section, .workflows { padding: 5rem 2rem; }
+    .workflows-grid { grid-template-columns: 1fr; gap: 2rem; }
     .proceso-steps { grid-template-columns: 1fr 1fr; gap: 3rem; }
     .proceso-steps::before { display: none; }
     .sobre-mi { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
@@ -568,7 +847,7 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAV — FIX 5b: agregado link #video-3d en navegación -->
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
     <div class="logo-icon">A</div>
@@ -580,14 +859,14 @@
   <div class="nav-links">
     <a href="#servicios">Servicios</a>
     <a href="#proceso">Método</a>
+    <a href="#workflows">Automatización</a>
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#testimonios">Resultados</a>
-    <a href="#video-3d">3D</a>
     <a href="#contacto" class="nav-cta">Agendar sesión</a>
   </div>
 </nav>
 
-<!-- HERO — FIX 7: poster="POSTCLOSER.png" como imagen de fallback en mobile mientras carga el video -->
+<!-- HERO con VIDEO MP4 de fondo -->
 <section class="hero">
   <div class="hero-left">
     <div class="hero-tag fade-up">Closer de Alto Rendimiento</div>
@@ -611,7 +890,7 @@
         <div class="stat-label">Tasa de cierre</div>
       </div>
       <div>
-        <div class="stat-num">+$5M</div>
+        <div class="stat-num">+5M</div>
         <div class="stat-label">En ventas cerradas</div>
       </div>
       <div>
@@ -622,7 +901,7 @@
   </div>
   <div class="hero-right">
     <div class="hero-video-wrapper">
-      <video autoplay muted loop playsinline poster="POSTCLOSER.png" src="video.mp4"></video>
+      <video autoplay muted loop playsinline src="video.mp4"></video>
       <div class="hero-img-overlay"></div>
     </div>
     <div class="hero-img-accent">Abraxas Group · Premium Closer</div>
@@ -784,13 +1063,46 @@
   </div>
 </section>
 
-<!-- SOBRE MÍ — FIX 5c: section con clase propia -->
-<section class="section-sobre-mi" id="sobre-mi">
+<!-- NUEVA SECCIÓN: WORKFLOWS COMPLETOS (Automatización & IA) -->
+<section class="workflows" id="workflows">
+  <div class="workflows-inner">
+    <div class="section-label fade-up">Más allá del cierre</div>
+    <h2 class="section-title fade-up stagger-1">Automatización & Workflows<br><em>No solo somos closers</em></h2>
+    <div class="workflows-grid">
+      <div class="workflows-desc">
+        <p class="fade-up stagger-2">
+          Diseñamos <strong>flujos de trabajo completos</strong> que abarcan desde la captación hasta el postventa. 
+          Integramos herramientas de vanguardia para que cada etapa del ciclo de ventas esté automatizada, 
+          monitoreada y optimizada en tiempo real.
+        </p>
+        <p class="fade-up stagger-3">
+          Trabajamos con <strong>n8n</strong> para orquestar automatizaciones complejas, 
+          <strong>GoHighLevel</strong> como centro de operaciones de marketing y ventas, 
+          <strong>Claude Code</strong> y <strong>DeepSeek</strong> para potenciar la inteligencia en los 
+          procesos de calificación, seguimiento y cierre asistido por IA.
+        </p>
+        <div class="tech-badges fade-up stagger-4">
+          <span class="tech-badge">n8n</span>
+          <span class="tech-badge">GoHighLevel</span>
+          <span class="tech-badge">Claude Code</span>
+          <span class="tech-badge">DeepSeek</span>
+        </div>
+      </div>
+      <div class="workflows-image fade-up stagger-2">
+        <div class="placeholder-icon">⚙️</div>
+        <p>Automatizaciones en tiempo real<br>Workflows personalizados<br>IA aplicada a ventas</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ (con espacio para foto de perfil) -->
+<section id="sobre-mi">
   <div class="sobre-mi">
     <div class="sobre-img-wrapper fade-up">
       <div class="sobre-img-frame"></div>
-      <img src="oscar-profile.jpg" alt="Oscar Chinchilla — Founder Abraxas Group" />
-      <!-- FIX 8: badge unificado en 83% (consistente con hero y resultados) -->
+      <!-- ESPACIO PARA TU FOTO DE PERFIL: reemplazar 'oscar-profile.jpg' -->
+      <img src="oscar-profile.jpg" alt="Foto de perfil - Oscar Chinchilla" />
       <div class="sobre-badge">
         <div class="badge-num">83%</div>
         <div class="badge-text">Tasa cierre promedio</div>
@@ -823,7 +1135,7 @@
 <!-- RESULTADOS -->
 <section class="resultados">
   <div class="section-label fade-up" style="justify-content:center">Números reales</div>
-  <h2 class="section-title fade-up stagger-1" style="text-align:center">Los resultados<br><em>hablan solos</em></h2>
+  <h2 class="section-title fade-up stagger-1">Los resultados<br><em>hablan solos</em></h2>
   <div class="resultados-grid">
     <div class="resultado fade-up">
       <div class="resultado-num">+$5M</div>
@@ -844,7 +1156,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIOS — FIX 9: porcentaje corregido de 82% a 89% para mayor credibilidad -->
+<!-- TESTIMONIOS -->
 <section class="testimonios" id="testimonios">
   <div class="testimonios-inner">
     <div class="section-label fade-up">Testimonios</div>
@@ -854,7 +1166,7 @@
         <span class="testimonio-quote-icon">"</span>
         <p class="testimonio-text">
           En 30 días con Abraxas Group duplicamos nuestra tasa de cierre. 
-          Pasamos del 35% al 89%. No es magia, es sistema.
+          Pasamos del 40% al 82%. No es magia, es sistema.
         </p>
         <div class="testimonio-author">
           <div class="author-avatar">M</div>
@@ -908,7 +1220,7 @@
       identificamos los cuellos de botella y te decimos exactamente qué haremos.
     </p>
     <div class="cta-buttons fade-up stagger-3">
-      <a href="https://wa.me/5493417400299?text=Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20gratuito%20con%20Abraxas%20Group" class="btn-primary" target="_blank" rel="noopener">
+      <a href="https://wa.me/5493417400299?text=Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20gratuito%20con%20Abraxas%20Group" class="btn-primary" target="_blank">
         Agendar por WhatsApp
       </a>
       <a href="mailto:o.chinchilla@abraxas-group.lat" class="btn-ghost">
@@ -918,21 +1230,15 @@
   </div>
 </section>
 
-<!-- VIDEO 3D — FIX 6: video real con controles, poster y nombre de archivo correcto -->
+<!-- VIDEO 3D (AL FINAL) - CON TÍTULO MEJORADO -->
 <section class="video-3d-section" id="video-3d">
   <div class="testimonios-inner">
-    <div class="section-label fade-up">Creación 3D</div>
-    <h2 class="section-title fade-up stagger-1">Mi trabajo en <em>3D</em></h2>
-    <div class="video-3d-wrapper fade-up stagger-2">
-      <video
-        controls
-        muted
-        loop
-        playsinline
-        poster="POSTCLOSER.png"
-        src="WhatsApp_Video_2026-04-13_at_7_50_27_PM.mp4"
-      ></video>
-      <div class="video-3d-label">Abraxas Group · Producción 3D</div>
+    <div class="section-label fade-up">Experiencia Inmersiva</div>
+    <h2 class="section-title fade-up stagger-1">Sumérgete en nuestro <em>universo de trabajo</em></h2>
+    <div class="video-3d-container fade-up stagger-2">
+      <div class="placeholder-icon">🌀</div>
+      <div>Animación 3D • Oficina en rotación • Entorno inmersivo</div>
+      <div class="video-3d-note">(Aquí se reproduce tu video 3D de 10 segundos — oficina girando)</div>
     </div>
   </div>
 </section>
@@ -962,15 +1268,15 @@
     <ul class="footer-links">
       <li><a href="#sobre-mi">Sobre Mí</a></li>
       <li><a href="#proceso">Metodología</a></li>
+      <li><a href="#workflows">Workflows</a></li>
       <li><a href="#testimonios">Testimonios</a></li>
-      <li><a href="#video-3d">3D</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </div>
   <div>
     <div class="footer-col-title">Contacto</div>
     <ul class="footer-links">
-      <li><a href="https://wa.me/5493417400299" target="_blank" rel="noopener">+54 9 341 740 0299</a></li>
+      <li><a href="https://wa.me/5493417400299" target="_blank">+5493417400299</a></li>
       <li><a href="mailto:o.chinchilla@abraxas-group.lat">o.chinchilla@abraxas-group.lat</a></li>
       <li><a href="https://abraxas-group.lat">abraxas-group.lat</a></li>
     </ul>
