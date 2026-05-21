@@ -565,6 +565,243 @@
   .footer-domain { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--verde-neon); letter-spacing: 0.15em; }
   .powered { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: rgba(200,191,164,0.5); letter-spacing: 0.1em; }
 
+  /* ===== EQUIPO SECTION ===== */
+  .equipo-section {
+    padding: 8rem 4rem;
+    background: var(--negro);
+    border-top: 1px solid rgba(74,158,107,0.15);
+  }
+  .equipo-inner { max-width: 1200px; margin: 0 auto; }
+  .equipo-header { max-width: 720px; margin-bottom: 5rem; }
+  .equipo-subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem; line-height: 1.9; color: var(--crema-oscuro);
+    margin-top: 1.5rem; max-width: 560px;
+  }
+
+  /* Líder Card */
+  .lider-card {
+    display: grid; grid-template-columns: 180px 1fr; gap: 3rem;
+    align-items: center;
+    background: rgba(8,10,9,0.6); border: 1px solid rgba(74,158,107,0.2);
+    padding: 2.5rem; margin-bottom: 4rem; position: relative; overflow: hidden;
+  }
+  .lider-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: linear-gradient(90deg, var(--verde-neon), var(--gold), transparent);
+  }
+  .lider-avatar img {
+    width: 100%; display: block;
+    filter: grayscale(15%) contrast(1.05);
+    border: 1px solid rgba(74,158,107,0.25);
+  }
+  .lider-tag {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--verde-neon); margin-bottom: 0.5rem;
+  }
+  .lider-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 300; color: var(--crema);
+    margin-bottom: 1rem; line-height: 1;
+  }
+  .lider-bio {
+    font-family: 'DM Mono', monospace; font-size: 0.72rem;
+    line-height: 1.9; color: var(--crema-oscuro); margin-bottom: 1.5rem; max-width: 520px;
+  }
+  .lider-brands { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .brand-pill {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    border: 1px solid rgba(74,158,107,0.4);
+    color: var(--verde-neon); padding: 0.35rem 0.9rem; border-radius: 2px;
+  }
+  .brand-pill-digital { border-color: rgba(201,168,76,0.4); color: var(--gold); }
+
+  /* Ecosistema */
+  .ecosistema-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px;
+    background: rgba(74,158,107,0.1); border: 1px solid rgba(74,158,107,0.1);
+    margin-bottom: 5rem;
+  }
+  .ecosistema-card {
+    background: var(--negro-card); padding: 3rem 2.5rem;
+    position: relative; overflow: hidden; transition: background 0.3s;
+  }
+  .ecosistema-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: var(--verde-neon);
+    transform: scaleX(0); transition: transform 0.4s;
+  }
+  .ecosistema-card:hover { background: rgba(26,58,42,0.3); }
+  .ecosistema-card:hover::before { transform: scaleX(1); }
+  .eco-digital::before { background: var(--gold); }
+  .eco-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 300; color: rgba(74,158,107,0.1);
+    line-height: 1; margin-bottom: 1rem; transition: color 0.3s;
+  }
+  .eco-digital .eco-num { color: rgba(201,168,76,0.1); }
+  .ecosistema-card:hover .eco-num { color: rgba(74,158,107,0.22); }
+  .eco-digital:hover .eco-num { color: rgba(201,168,76,0.22); }
+  .eco-name {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem;
+    color: var(--crema); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem;
+  }
+  .eco-url {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    color: var(--verde-neon); letter-spacing: 0.15em; margin-bottom: 1.5rem;
+  }
+  .eco-digital .eco-url { color: var(--gold); }
+  .eco-desc {
+    font-family: 'DM Mono', monospace; font-size: 0.68rem;
+    line-height: 1.9; color: var(--crema-oscuro); margin-bottom: 1.5rem;
+  }
+  .eco-focus {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    color: rgba(200,191,164,0.45); border-top: 1px solid rgba(74,158,107,0.15);
+    padding-top: 1rem; letter-spacing: 0.04em;
+  }
+  .eco-digital .eco-focus { border-color: rgba(201,168,76,0.15); }
+
+  /* Rol */
+  .rol-section { margin-bottom: 5rem; }
+  .rol-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    font-weight: 300; color: var(--crema); margin-bottom: 3rem; line-height: 1.1;
+  }
+  .rol-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
+    background: rgba(74,158,107,0.08); border: 1px solid rgba(74,158,107,0.08);
+  }
+  .rol-card {
+    background: var(--negro-card); padding: 2.5rem 2rem;
+    transition: background 0.3s; position: relative; overflow: hidden;
+  }
+  .rol-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: var(--verde-neon);
+    transform: scaleX(0); transition: transform 0.4s;
+  }
+  .rol-card:hover { background: rgba(26,58,42,0.3); }
+  .rol-card:hover::before { transform: scaleX(1); }
+  .rol-icon { font-size: 1.4rem; margin-bottom: 1rem; display: block; }
+  .rol-card-title {
+    font-family: 'Syne', sans-serif; font-size: 0.9rem;
+    font-weight: 600; color: var(--crema); margin-bottom: 0.75rem;
+  }
+  .rol-card-desc {
+    font-family: 'DM Mono', monospace; font-size: 0.65rem; line-height: 1.9; color: var(--crema-oscuro);
+  }
+
+  /* Comisión Block */
+  .comision-block {
+    background: var(--verde); border: 1px solid rgba(74,158,107,0.5);
+    padding: 5rem 3rem; margin-bottom: 5rem;
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .comision-block::before {
+    content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(74,158,107,0.25) 0%, transparent 70%); pointer-events: none;
+  }
+  .comision-block::after {
+    content: 'COMISIÓN'; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(6rem, 16vw, 16rem);
+    font-weight: 300; color: rgba(201,168,76,0.04); letter-spacing: 0.1em;
+    white-space: nowrap; pointer-events: none; z-index: 0;
+  }
+  .comision-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(6rem, 12vw, 10rem); font-weight: 300; color: var(--gold);
+    line-height: 1; margin-bottom: 0.5rem; position: relative; z-index: 1;
+  }
+  .comision-label {
+    font-family: 'Syne', sans-serif; font-size: 0.85rem;
+    font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--crema); margin-bottom: 1.5rem; position: relative; z-index: 1;
+  }
+  .comision-desc {
+    font-family: 'DM Mono', monospace; font-size: 0.75rem;
+    line-height: 1.9; color: var(--crema-oscuro); max-width: 440px;
+    margin: 0 auto; position: relative; z-index: 1;
+  }
+  .comision-tickets {
+    display: flex; gap: 2rem; justify-content: center; margin-top: 2.5rem;
+    position: relative; z-index: 1; flex-wrap: wrap;
+  }
+  .ticket-range {
+    font-family: 'DM Mono', monospace; font-size: 0.65rem;
+    letter-spacing: 0.15em; color: rgba(201,168,76,0.7);
+    border: 1px solid rgba(201,168,76,0.2); padding: 0.5rem 1.5rem;
+  }
+
+  /* Requisitos */
+  .requisitos-section { margin-bottom: 5rem; }
+  .requisitos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+  .requisito {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    background: rgba(8,10,9,0.4); border: 1px solid rgba(74,158,107,0.12);
+    padding: 1.75rem; transition: border-color 0.3s;
+  }
+  .requisito:hover { border-color: rgba(74,158,107,0.35); }
+  .req-check {
+    font-family: 'DM Mono', monospace; font-size: 0.75rem;
+    color: var(--verde-neon); flex-shrink: 0; margin-top: 0.1rem;
+    border: 1px solid rgba(74,158,107,0.4); padding: 0.2rem 0.4rem;
+    line-height: 1;
+  }
+  .req-title {
+    font-family: 'Syne', sans-serif; font-size: 0.82rem;
+    font-weight: 600; color: var(--crema); margin-bottom: 0.4rem;
+  }
+  .req-desc {
+    font-family: 'DM Mono', monospace; font-size: 0.63rem;
+    line-height: 1.8; color: var(--crema-oscuro);
+  }
+
+  /* Aplicar CTA */
+  .aplicar-cta {
+    background: linear-gradient(135deg, rgba(26,58,42,0.5) 0%, rgba(13,17,15,0.9) 100%);
+    border: 1px solid rgba(74,158,107,0.3); padding: 3.5rem;
+    position: relative; overflow: hidden;
+  }
+  .aplicar-cta::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: linear-gradient(90deg, var(--verde-neon), var(--gold), transparent);
+  }
+  .aplicar-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 3rem; flex-wrap: wrap;
+  }
+  .aplicar-eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--verde-neon); margin-bottom: 0.75rem;
+  }
+  .aplicar-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2.4rem);
+    font-weight: 300; color: var(--crema); line-height: 1.2; margin-bottom: 0.75rem;
+  }
+  .aplicar-sub {
+    font-family: 'DM Mono', monospace; font-size: 0.68rem;
+    line-height: 1.9; color: var(--crema-oscuro); max-width: 440px;
+  }
+
+  @media (max-width: 1024px) {
+    .equipo-section { padding: 5rem 2rem; }
+    .lider-card { grid-template-columns: 1fr; gap: 1.5rem; }
+    .lider-avatar img { max-width: 200px; }
+    .ecosistema-grid { grid-template-columns: 1fr; }
+    .rol-grid { grid-template-columns: 1fr; }
+    .requisitos-grid { grid-template-columns: 1fr; }
+    .aplicar-inner { flex-direction: column; align-items: flex-start; }
+    .comision-block { padding: 4rem 2rem; }
+  }
+
   /* ANIMATIONS */
   .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -620,6 +857,7 @@
     <a href="#workflows">Automatización</a>
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#testimonios">Resultados</a>
+    <a href="#equipo">Únete al equipo</a>
     <a href="#contacto" class="nav-cta">Agendar sesión</a>
   </div>
 </nav>
@@ -957,6 +1195,179 @@
   </div>
 </section>
 
+<!-- ÚNETE AL EQUIPO -->
+<section class="equipo-section" id="equipo">
+  <div class="equipo-inner">
+
+    <!-- Header -->
+    <div class="equipo-header">
+      <div class="section-label fade-up">Trabaja con nosotros</div>
+      <h2 class="section-title fade-up stagger-1">
+        Construimos un equipo<br>de <em>élite comercial.</em>
+      </h2>
+      <p class="equipo-subtitle fade-up stagger-2">
+        Buscamos setter-closers que prospecten en frío, califiquen y cierren.
+        Comisión del 40% sobre cada deal cerrado. Sin techo de ingresos, 100% remoto,
+        modelo puro de performance.
+      </p>
+    </div>
+
+    <!-- Líder Card -->
+    <div class="lider-card fade-up">
+      <div class="lider-avatar">
+        <img src="oscar-profile.jpg" alt="Oscar Chinchilla — Founder Abraxas Group">
+      </div>
+      <div>
+        <div class="lider-tag">Fundador del Ecosistema · Cabeza de equipo</div>
+        <div class="lider-name">Oscar Chinchilla</div>
+        <p class="lider-bio">
+          High Ticket Closer con más de 8 años en mercados de Oil & Gas, minería, industria
+          y servicios profesionales. Negociaciones directas en Houston, Fujairah y Róterdam.
+          Fundador de dos marcas activas con clientes en LATAM y GBA. Ahora busco a los mejores
+          para construir un equipo de cierre que opere como una máquina.
+        </p>
+        <div class="lider-brands">
+          <span class="brand-pill">Abraxas Group</span>
+          <span class="brand-pill brand-pill-digital">digitAI motor</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ecosistema -->
+    <div class="section-label fade-up" style="margin-bottom:1.5rem">El ecosistema donde operás</div>
+    <div class="ecosistema-grid fade-up stagger-1">
+      <div class="ecosistema-card">
+        <div class="eco-num">01</div>
+        <div class="eco-name">Abraxas Group</div>
+        <div class="eco-url">abraxas-group.lat</div>
+        <p class="eco-desc">
+          Agencia B2B de revenue growth y cierre de ventas complejas. Cerramos
+          contratos de alto ticket para empresas que no pueden permitirse perder oportunidades.
+          Operamos en commodities, tecnología, consultoría y educación premium.
+        </p>
+        <div class="eco-focus">Closer dedicado · Auditoría de ventas · Scripts · Consultoría estratégica</div>
+      </div>
+      <div class="ecosistema-card eco-digital">
+        <div class="eco-num">02</div>
+        <div class="eco-name">digitAI motor</div>
+        <div class="eco-url">digitaimotor.lat</div>
+        <p class="eco-desc">
+          Agencia de servicios digitales: presencia web, automatizaciones, IA aplicada
+          y crecimiento digital para pymes y profesionales. El Motor de tu Crecimiento Digital.
+          Mercado GBA y LATAM.
+        </p>
+        <div class="eco-focus">Webs · SEO · Automatización · WhatsApp Business · IA</div>
+      </div>
+    </div>
+
+    <!-- El Rol -->
+    <div class="rol-section fade-up">
+      <div class="section-label">El rol</div>
+      <h3 class="rol-titulo">Setter-Closer Híbrido —<br>del primer contacto al contrato firmado.</h3>
+      <div class="rol-grid">
+        <div class="rol-card">
+          <span class="rol-icon">🎯</span>
+          <div class="rol-card-title">Prospectar en frío</div>
+          <p class="rol-card-desc">
+            Salís a buscar los prospectos vos. LinkedIn, Instagram, WhatsApp Business,
+            directorios. Identificás el pain, abrís la conversación, generás el primer
+            interés genuino. La prospección no te asusta — te motiva.
+          </p>
+        </div>
+        <div class="rol-card">
+          <span class="rol-icon">📞</span>
+          <div class="rol-card-title">Calificar y agendar</div>
+          <p class="rol-card-desc">
+            Filtrás la calidad del lead. Hacés las preguntas correctas para entender
+            el problema, el presupuesto y la urgencia. Generás la llamada de cierre
+            y la conducís vos mismo desde el primer minuto.
+          </p>
+        </div>
+        <div class="rol-card">
+          <span class="rol-icon">✍️</span>
+          <div class="rol-card-title">Cerrar el deal</div>
+          <p class="rol-card-desc">
+            Llevás todo el proceso hasta la firma o el pago. No pasás el lead a otro.
+            Manejás objeciones, negociás términos y cerrás. Cada deal cerrado es
+            comisión directa a tu bolsillo: 40% sobre el valor del contrato.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comisión Highlight -->
+    <div class="comision-block fade-up">
+      <div class="comision-num">40%</div>
+      <div class="comision-label">De comisión sobre cada deal cerrado</div>
+      <p class="comision-desc">
+        Sin sueldo fijo. Sin límite de ingresos. Cada cierre es tuyo.
+        Vos prospectás, vos cerrás, vos cobrás. Puro modelo de performance.
+      </p>
+      <div class="comision-tickets">
+        <span class="ticket-range">Ticket Abraxas: $500–$3.000 USD</span>
+        <span class="ticket-range">Ticket digitAI: $200–$1.500 USD</span>
+        <span class="ticket-range">Comisión promedio por deal: $200–$1.200 USD</span>
+      </div>
+    </div>
+
+    <!-- Requisitos -->
+    <div class="requisitos-section fade-up">
+      <div class="section-label">Perfil que buscamos</div>
+      <div class="requisitos-grid">
+        <div class="requisito">
+          <span class="req-check">✓</span>
+          <div>
+            <div class="req-title">Mentalidad de hunter</div>
+            <p class="req-desc">No esperás los leads. Salís a buscarlos. La prospección en frío no te asusta — es tu ventaja competitiva. Tenés iniciativa y no necesitás que te digan qué hacer.</p>
+          </div>
+        </div>
+        <div class="requisito">
+          <span class="req-check">✓</span>
+          <div>
+            <div class="req-title">Comunicación de alta precisión</div>
+            <p class="req-desc">Sabés escuchar, hacer las preguntas correctas y crear urgencia genuina. No sos un robot con script. Sos alguien que entiende el problema antes de proponer la solución.</p>
+          </div>
+        </div>
+        <div class="requisito">
+          <span class="req-check">✓</span>
+          <div>
+            <div class="req-title">Orientado 100% a resultados</div>
+            <p class="req-desc">Tu métrica es simple: deals cerrados. No te motiva la actividad — te motiva el resultado. El número no miente y vos tampoco. La excelencia no es negociable.</p>
+          </div>
+        </div>
+        <div class="requisito">
+          <span class="req-check">✓</span>
+          <div>
+            <div class="req-title">Disponibilidad y compromiso real</div>
+            <p class="req-desc">Mínimo 4–6 horas diarias dedicadas al rol. Remoto 100%, pero con compromiso máximo. Respondés rápido, cumplís lo que decís y tratás el negocio como propio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA aplicación -->
+    <div class="aplicar-cta fade-up stagger-2">
+      <div class="aplicar-inner">
+        <div class="aplicar-text">
+          <div class="aplicar-eyebrow">¿Sos la persona?</div>
+          <h3 class="aplicar-headline">
+            Mandame un mensaje.<br><em style="color:var(--gold)">Demostralo desde el primer contacto.</em>
+          </h3>
+          <p class="aplicar-sub">
+            El proceso de selección empieza en el chat. Si podés venderme por qué sos
+            el indicado para unirte al equipo, ya cerraste la mitad del proceso.
+            No mando formularios. Quiero ver cómo abrís la conversación.
+          </p>
+        </div>
+        <a href="https://wa.me/5493417400299?text=Hola%20Oscar%2C%20me%20interesa%20postularme%20como%20Setter-Closer.%20Te%20cuento%20por%20qu%C3%A9%20soy%20el%20indicado%20para%20el%20equipo." class="btn-primary" target="_blank" rel="noopener" style="white-space:nowrap; flex-shrink:0;">
+          Postularme por WhatsApp →
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CTA FINAL -->
 <section class="cta-final" id="contacto">
   <div class="cta-inner">
@@ -1034,6 +1445,7 @@
       <li><a href="#proceso">Metodología</a></li>
       <li><a href="#workflows">Workflows</a></li>
       <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#equipo">Únete al equipo</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </div>
