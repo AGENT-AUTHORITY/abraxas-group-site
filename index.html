@@ -31,9 +31,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Preload LCP image -->
-<link rel="preload" as="image" href="assets/img/hero-cargo-ship.jpg" fetchpriority="high">
-
 <!-- Tailwind CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -295,11 +292,11 @@
      1. HERO
      ================================================================ -->
 <section id="hero" class="hero-section" aria-labelledby="hero-heading">
-  <img src="assets/img/hero-cargo-ship.jpg"
-       alt="Bulk carrier vessel at grain port terminal"
-       width="1600" height="900"
-       fetchpriority="high"
-       class="hero-img">
+  <video class="hero-img" autoplay muted loop playsinline preload="auto"
+         aria-hidden="true" poster="assets/img/hero-cargo-ship.jpg">
+    <source src="assets/img/hero-cargo-ship.webm" type="video/webm">
+    <source src="assets/img/hero-cargo-ship.mp4"  type="video/mp4">
+  </video>
   <div class="hero-overlay"></div>
 
   <div class="hero-content max-w-6xl mx-auto px-6 w-full py-32">
