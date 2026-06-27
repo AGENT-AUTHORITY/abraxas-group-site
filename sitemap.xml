@@ -43,4 +43,13 @@ xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.abraxas-group.lat/" />
   </url>
 
+
+  <!-- Wheat Flour Export Landing (EN) -->
+  <url>
+    <loc>https://abraxas-group.lat/wheat-flour.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
 </urlset>
