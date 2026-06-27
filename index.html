@@ -15,13 +15,13 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.abraxas-group.lat/">
 <meta property="og:site_name" content="Abraxas Group">
-<meta property="og:image" content="https://abraxas-group.lat/assets/img/og-wheat-flour.jpg">
+<meta property="og:image" content="https://www.abraxas-group.lat/assets/img/og-wheat-flour.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Argentine Wheat Flour Export | Abraxas Group">
 <meta name="twitter:description" content="Argentine wheat flour 000, bakery grade. Structured supply program for international buyers worldwide.">
-<meta name="twitter:image" content="https://abraxas-group.lat/assets/img/og-wheat-flour.jpg">
+<meta name="twitter:image" content="https://www.abraxas-group.lat/assets/img/og-wheat-flour.jpg">
 
 <!-- Favicon: espiga petróleo -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230E3540'/><line x1='16' y1='30' x2='16' y2='3' stroke='%23C2CCCF' stroke-width='1.5'/><path d='M16 25 C12 23 10 18 13 14.5 C14.5 12.5 16 14 16 15' stroke='%23C2CCCF' stroke-width='1.2' fill='none' stroke-linecap='round'/><path d='M16 25 C20 23 22 18 19 14.5 C17.5 12.5 16 14 16 15' stroke='%23C2CCCF' stroke-width='1.2' fill='none' stroke-linecap='round'/><path d='M16 18 C12 16 10 11 13 7.5 C14.5 5.5 16 7 16 8' stroke='%23C2CCCF' stroke-width='1.2' fill='none' stroke-linecap='round'/><path d='M16 18 C20 16 22 11 19 7.5 C17.5 5.5 16 7 16 8' stroke='%23C2CCCF' stroke-width='1.2' fill='none' stroke-linecap='round'/></svg>">
@@ -43,7 +43,7 @@
         colors: {
           p900: '#0A2730', p800: '#0E3540', p700: '#134653',
           p600: '#1A5664', p500: '#2E727F',
-          ink:  '#1F2B2F', muted: '#7C878B',
+          ink:  '#1F2B2F', muted: '#5E6B6F',
           line: '#DCE3E3', mist: '#F3F6F6',
           steel: '#5F7278', 'steel-soft': '#C2CCCF',
         },
@@ -51,6 +51,9 @@
     }
   }
 </script>
+
+<!-- Analytics: Plausible — create account at plausible.io, then uncomment and set data-domain -->
+<!-- <script defer data-domain="abraxas-group.lat" src="https://plausible.io/js/script.js"></script> -->
 
 <style>
   :root { --metal: linear-gradient(120deg,#E4EAEB 0%,#A7B3B7 38%,#D6DDDE 60%,#94A1A6 100%); }
@@ -98,6 +101,14 @@
   }
   .btn-outline:hover { background: rgba(194,204,207,0.1); color: #fff; }
 
+  .btn-ghost {
+    border: 1.5px solid rgba(194,204,207,0.28); color: rgba(194,204,207,0.75); border-radius: 8px;
+    padding: 0.75rem 1.375rem; font-weight: 500; font-size: 0.8125rem;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    text-decoration: none; transition: background 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { background: rgba(194,204,207,0.08); color: #fff; }
+
   /* ---- Reveal ---- */
   .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
   .reveal.in { opacity: 1; transform: translateY(0); }
@@ -115,12 +126,24 @@
     font-weight: 800; font-size: 0.7rem; color: #0A2730; flex-shrink: 0;
   }
 
+  /* ---- Process timeline: horizontal connector hidden on mobile ---- */
+  .step-h-connector { display: none; }
+  @media (min-width: 640px) { .step-h-connector { display: block; } }
+
   /* ---- Spec table ---- */
   .spec-row { display: flex; gap: 1.25rem; padding: 0.875rem 0; border-bottom: 1px solid #DCE3E3; align-items: baseline; }
   .spec-row:last-child { border-bottom: none; padding-bottom: 0; }
   .spec-key { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #5F7278; min-width: 148px; flex-shrink: 0; }
   .spec-val { font-size: 0.9rem; color: #1F2B2F; font-weight: 500; }
-  .spec-val-tbc { font-size: 0.88rem; color: #7C878B; font-style: italic; }
+  .spec-val-tbc { font-size: 0.88rem; color: #5E6B6F; font-style: italic; }
+
+  /* ---- Incoterm badge ---- */
+  .inco-badge {
+    display: inline-flex; align-items: center;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+    padding: 0.2rem 0.5rem; border-radius: 4px;
+    background: #EEF2F3; color: #134653; border: 1px solid #DCE3E3;
+  }
 
   /* ---- Form ---- */
   .form-label { display: block; font-size: 0.8125rem; font-weight: 600; color: #1F2B2F; margin-bottom: 0.375rem; }
@@ -154,6 +177,22 @@
   .info-value { font-size: 0.875rem; font-weight: 600; color: #0E3540; }
   .info-value a { color: #134653; text-decoration: none; transition: color 0.2s; }
   .info-value a:hover { color: #1A5664; }
+
+  /* ---- FAQ accordion ---- */
+  .faq-item { border-bottom: 1px solid #DCE3E3; }
+  .faq-item:first-child { border-top: 1px solid #DCE3E3; }
+  .faq-item summary {
+    list-style: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: 1.125rem 0; font-weight: 600; font-size: 0.9375rem; color: #0E3540;
+    transition: color 0.2s; user-select: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: #134653; }
+  .faq-chevron { flex-shrink: 0; transition: transform 0.25s ease; }
+  .faq-item[open] .faq-chevron { transform: rotate(180deg); }
+  .faq-body { padding-bottom: 1.125rem; color: #5E6B6F; font-size: 0.9rem; line-height: 1.7; }
+  .faq-body strong { color: #0E3540; font-weight: 600; }
 </style>
 
 <!-- JSON-LD Structured Data -->
@@ -164,7 +203,7 @@
     {
       "@type": "Organization",
       "name": "Abraxas Group",
-      "url": "https://abraxas-group.lat",
+      "url": "https://www.abraxas-group.lat",
       "description": "International business development for the export of Argentine agroindustrial products. We connect qualified foreign buyers with established Argentine export capacity and coordinate the commercial and logistical framework of each operation.",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -192,7 +231,7 @@
     {
       "@type": "WebSite",
       "name": "Abraxas Group",
-      "url": "https://abraxas-group.lat"
+      "url": "https://www.abraxas-group.lat"
     }
   ]
 }
@@ -280,6 +319,13 @@
       <div class="reveal d3 flex flex-wrap gap-4 mb-14">
         <a href="#contact" class="btn-primary">Request a tailored offer</a>
         <a href="#product" class="btn-outline">Learn about the product</a>
+        <!-- Activate once assets/abraxas-wheat-flour-dossier.pdf is uploaded -->
+        <a href="assets/abraxas-wheat-flour-dossier.pdf" target="_blank" rel="noopener" class="btn-ghost">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 13h12M8 2v8M5 7l3 4 3-4"/>
+          </svg>
+          Product dossier
+        </a>
       </div>
 
       <!-- Geographic strip -->
@@ -303,7 +349,7 @@
 <!-- ================================================================
      2. WHO WE ARE
      ================================================================ -->
-<section id="about" class="bg-mist py-24" aria-labelledby="about-heading">
+<section id="about" class="bg-mist py-20" aria-labelledby="about-heading">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid lg:grid-cols-2 gap-14 items-center">
 
@@ -361,7 +407,7 @@
 <!-- ================================================================
      3. THE PRODUCT
      ================================================================ -->
-<section id="product" class="bg-white py-24" aria-labelledby="product-heading">
+<section id="product" class="bg-white py-20" aria-labelledby="product-heading">
   <div class="max-w-6xl mx-auto px-6">
 
     <div class="text-center mb-14">
@@ -415,6 +461,18 @@
           <span class="spec-key">Origin</span>
           <span class="spec-val">Argentina</span>
         </div>
+
+        <!-- Dossier link -->
+        <div class="mt-6 pt-5 border-t border-line">
+          <!-- Activate once assets/abraxas-wheat-flour-dossier.pdf is uploaded -->
+          <a href="assets/abraxas-wheat-flour-dossier.pdf" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-sm font-semibold text-p700 hover:text-p800 transition-colors">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 13h12M8 2v8M5 7l3 4 3-4"/>
+            </svg>
+            Download product dossier (PDF)
+          </a>
+        </div>
       </div>
 
       <!-- Photo + description -->
@@ -441,7 +499,7 @@
 <!-- ================================================================
      4. SUPPLY & CONTRACT FRAMEWORK
      ================================================================ -->
-<section id="supply" class="bg-mist py-24" aria-labelledby="supply-heading">
+<section id="supply" class="bg-mist py-20" aria-labelledby="supply-heading">
   <div class="max-w-6xl mx-auto px-6">
 
     <div class="mb-12">
@@ -458,44 +516,32 @@
 
     <div class="grid md:grid-cols-3 gap-5 mb-8">
 
-      <div class="card-accent rounded-2xl border border-line bg-white p-7 reveal">
-        <div class="flex items-center justify-center rounded-lg mb-5"
-             style="width:36px;height:36px;background:var(--metal);">
-          <!-- Calendar icon -->
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#0A2730" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-            <rect x="1.5" y="3" width="13" height="11.5" rx="1.5"/>
-            <line x1="1.5" y1="7" x2="14.5" y2="7"/>
-            <line x1="5" y1="1.5" x2="5" y2="4.5"/>
-            <line x1="11" y1="1.5" x2="11" y2="4.5"/>
-          </svg>
-        </div>
+      <div class="card-accent rounded-2xl border border-line bg-white p-6 reveal">
+        <svg class="mb-4" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <rect x="1.5" y="3" width="13" height="11.5" rx="1.5"/>
+          <line x1="1.5" y1="7" x2="14.5" y2="7"/>
+          <line x1="5" y1="1.5" x2="5" y2="4.5"/>
+          <line x1="11" y1="1.5" x2="11" y2="4.5"/>
+        </svg>
         <h3 class="font-semibold text-p800 mb-2 text-sm">Annual supply contracts</h3>
         <p class="text-muted text-sm leading-relaxed">Ongoing programs can be arranged under annual agreements with defined delivery periods.</p>
       </div>
 
-      <div class="card-accent rounded-2xl border border-line bg-white p-7 reveal d1">
-        <div class="flex items-center justify-center rounded-lg mb-5"
-             style="width:36px;height:36px;background:var(--metal);">
-          <!-- Package icon -->
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#0A2730" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="14 4.5 8 8 2 4.5"/>
-            <path d="M2 4.5l6 3.5 6-3.5V12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4.5z"/>
-            <line x1="8" y1="8" x2="8" y2="14"/>
-          </svg>
-        </div>
+      <div class="card-accent rounded-2xl border border-line bg-white p-6 reveal d1">
+        <svg class="mb-4" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="14 4.5 8 8 2 4.5"/>
+          <path d="M2 4.5l6 3.5 6-3.5V12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4.5z"/>
+          <line x1="8" y1="8" x2="8" y2="14"/>
+        </svg>
         <h3 class="font-semibold text-p800 mb-2 text-sm">Volume per operation</h3>
         <p class="text-muted text-sm leading-relaxed">Shipment size is agreed case by case with the buyer, based on actual demand and logistics.</p>
       </div>
 
-      <div class="card-accent rounded-2xl border border-line bg-white p-7 reveal d2">
-        <div class="flex items-center justify-center rounded-lg mb-5"
-             style="width:36px;height:36px;background:var(--metal);">
-          <!-- Clock icon -->
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#0A2730" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-            <circle cx="8" cy="8" r="6.5"/>
-            <polyline points="8 4.5 8 8 10.5 10"/>
-          </svg>
-        </div>
+      <div class="card-accent rounded-2xl border border-line bg-white p-6 reveal d2">
+        <svg class="mb-4" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <circle cx="8" cy="8" r="6.5"/>
+          <polyline points="8 4.5 8 8 10.5 10"/>
+        </svg>
         <h3 class="font-semibold text-p800 mb-2 text-sm">Flexible scheduling</h3>
         <p class="text-muted text-sm leading-relaxed">Delivery timing aligned to each buyer's demand calendar and destination port requirements.</p>
       </div>
@@ -518,7 +564,7 @@
 <!-- ================================================================
      5. WHAT WE CAN QUOTE
      ================================================================ -->
-<section id="quote" class="bg-white py-24" aria-labelledby="quote-heading">
+<section id="quote" class="bg-white py-20" aria-labelledby="quote-heading">
   <div class="max-w-6xl mx-auto px-6">
 
     <div class="max-w-2xl mb-12">
@@ -533,32 +579,38 @@
       </p>
     </div>
 
-    <!-- Variables grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 reveal d3">
+    <!-- Variables grid: 2-col on mobile, 5-col on large -->
+    <div class="grid grid-cols-2 lg:grid-cols-5 gap-3 reveal d3">
 
-      <div class="card-accent rounded-2xl border border-line bg-white px-6 py-5">
+      <div class="card-accent rounded-xl border border-line bg-white px-5 py-4">
         <div class="eyebrow mb-2">01</div>
         <p class="font-semibold text-p800 text-sm leading-snug">Technical specification</p>
       </div>
 
-      <div class="card-accent rounded-2xl border border-line bg-white px-6 py-5">
+      <div class="card-accent rounded-xl border border-line bg-white px-5 py-4">
         <div class="eyebrow mb-2">02</div>
         <p class="font-semibold text-p800 text-sm leading-snug">Volume per shipment</p>
       </div>
 
-      <div class="card-accent rounded-2xl border border-line bg-white px-6 py-5">
+      <div class="card-accent rounded-xl border border-line bg-white px-5 py-4">
         <div class="eyebrow mb-2">03</div>
         <p class="font-semibold text-p800 text-sm leading-snug">Destination port</p>
       </div>
 
-      <div class="card-accent rounded-2xl border border-line bg-white px-6 py-5">
+      <div class="card-accent rounded-xl border border-line bg-white px-5 py-4">
         <div class="eyebrow mb-2">04</div>
         <p class="font-semibold text-p800 text-sm leading-snug">Packaging</p>
       </div>
 
-      <div class="card-accent rounded-2xl border border-line bg-white px-6 py-5">
+      <div class="card-accent rounded-xl border border-line bg-white px-5 py-4 col-span-2 lg:col-span-1">
         <div class="eyebrow mb-2">05</div>
-        <p class="font-semibold text-p800 text-sm leading-snug">Commercial condition — FOB, CFR or CIF (Incoterms® 2020)</p>
+        <p class="font-semibold text-p800 text-sm leading-snug mb-3">Commercial condition</p>
+        <div class="flex flex-wrap gap-1.5 items-center">
+          <span class="inco-badge">FOB</span>
+          <span class="inco-badge">CFR</span>
+          <span class="inco-badge">CIF</span>
+          <span class="text-xs text-muted mt-1 w-full" style="font-size:0.65rem;">Incoterms® 2020</span>
+        </div>
       </div>
     </div>
   </div>
@@ -567,7 +619,7 @@
 <!-- ================================================================
      6. COMMERCIAL PROCESS
      ================================================================ -->
-<section id="process" class="py-24" style="background:linear-gradient(150deg,#0C313C,#0A2730,#081E25);" aria-labelledby="process-heading">
+<section id="process" class="py-20" style="background:linear-gradient(150deg,#0C313C,#0A2730,#081E25);" aria-labelledby="process-heading">
   <div class="max-w-6xl mx-auto px-6">
 
     <div class="text-center mb-16">
@@ -585,7 +637,7 @@
       <div class="reveal">
         <div class="flex items-center gap-3 mb-4">
           <div class="step-badge">01</div>
-          <div class="flex-1 h-px opacity-25" style="background:var(--metal);"></div>
+          <div class="step-h-connector flex-1 h-px opacity-25" style="background:var(--metal);"></div>
         </div>
         <h3 class="font-semibold text-white text-sm mb-1.5">Buyer inquiry</h3>
         <p class="text-steel-soft text-xs leading-relaxed">Initial contact from the buyer with basic requirements and destination market.</p>
@@ -594,7 +646,7 @@
       <div class="reveal d1">
         <div class="flex items-center gap-3 mb-4">
           <div class="step-badge">02</div>
-          <div class="flex-1 h-px opacity-25" style="background:var(--metal);"></div>
+          <div class="step-h-connector flex-1 h-px opacity-25" style="background:var(--metal);"></div>
         </div>
         <h3 class="font-semibold text-white text-sm mb-1.5">Required specifications</h3>
         <p class="text-steel-soft text-xs leading-relaxed">We request technical specs, volume, port, Incoterm, packaging and delivery schedule.</p>
@@ -603,7 +655,7 @@
       <div class="reveal d2">
         <div class="flex items-center gap-3 mb-4">
           <div class="step-badge">03</div>
-          <div class="flex-1 h-px opacity-25" style="background:var(--metal);"></div>
+          <div class="step-h-connector flex-1 h-px opacity-25" style="background:var(--metal);"></div>
         </div>
         <h3 class="font-semibold text-white text-sm mb-1.5">Technical evaluation</h3>
         <p class="text-steel-soft text-xs leading-relaxed">We assess operational availability and confirm feasibility with the Argentine export chain.</p>
@@ -624,7 +676,7 @@
       <div class="reveal d1">
         <div class="flex items-center gap-3 mb-4">
           <div class="step-badge">05</div>
-          <div class="flex-1 h-px opacity-25" style="background:var(--metal);"></div>
+          <div class="step-h-connector flex-1 h-px opacity-25" style="background:var(--metal);"></div>
         </div>
         <h3 class="font-semibold text-white text-sm mb-1.5">Negotiation</h3>
         <p class="text-steel-soft text-xs leading-relaxed">Terms and conditions are discussed and agreed between both parties.</p>
@@ -633,7 +685,7 @@
       <div class="reveal d2">
         <div class="flex items-center gap-3 mb-4">
           <div class="step-badge">06</div>
-          <div class="flex-1 h-px opacity-25" style="background:var(--metal);"></div>
+          <div class="step-h-connector flex-1 h-px opacity-25" style="background:var(--metal);"></div>
         </div>
         <h3 class="font-semibold text-white text-sm mb-1.5">Contract</h3>
         <p class="text-steel-soft text-xs leading-relaxed">Formal agreement signed, outlining all commercial and logistical conditions.</p>
@@ -653,7 +705,7 @@
 <!-- ================================================================
      7. ADVANTAGES
      ================================================================ -->
-<section id="advantages" class="bg-white py-24" aria-labelledby="advantages-heading">
+<section id="advantages" class="bg-white py-20" aria-labelledby="advantages-heading">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-14">
       <p class="eyebrow reveal mb-3">Why Abraxas Group</p>
@@ -664,53 +716,53 @@
       </h2>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-      <div class="card-accent rounded-2xl border border-line bg-white p-7 reveal">
-        <svg class="mb-4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <div class="card-accent rounded-2xl border border-line bg-white p-5 reveal">
+        <svg class="mb-3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
         </svg>
-        <h3 class="font-semibold text-p800 mb-2 text-sm">Competitive origin</h3>
+        <h3 class="font-semibold text-p800 mb-1.5 text-sm">Competitive origin</h3>
         <p class="text-muted text-sm leading-relaxed">Argentina is one of the world's leading agroindustrial producers, with established global export infrastructure.</p>
       </div>
 
-      <div class="card-accent rounded-2xl border border-line bg-white p-7 reveal d1">
-        <svg class="mb-4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <div class="card-accent rounded-2xl border border-line bg-white p-5 reveal d1">
+        <svg class="mb-3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/>
         </svg>
-        <h3 class="font-semibold text-p800 mb-2 text-sm">Flexible quotations</h3>
+        <h3 class="font-semibold text-p800 mb-1.5 text-sm">Flexible quotations</h3>
         <p class="text-muted text-sm leading-relaxed">Every commercial offer is prepared specifically for the buyer — no catalogue prices, no standard terms.</p>
       </div>
 
-      <div class="card-accent rounded-2xl border border-line bg-white p-7 reveal d2">
-        <svg class="mb-4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <div class="card-accent rounded-2xl border border-line bg-white p-5 reveal d2">
+        <svg class="mb-3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
-        <h3 class="font-semibold text-p800 mb-2 text-sm">Annual supply contracts</h3>
+        <h3 class="font-semibold text-p800 mb-1.5 text-sm">Annual supply contracts</h3>
         <p class="text-muted text-sm leading-relaxed">Long-term supply programs for buyers who need consistent, reliable access to Argentine flour.</p>
       </div>
 
-      <div class="card-accent rounded-2xl border border-line bg-white p-7 reveal d1">
-        <svg class="mb-4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <div class="card-accent rounded-2xl border border-line bg-white p-5 reveal d1">
+        <svg class="mb-3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M3 17l4-8 4 4 4-6 4 10"/><path d="M5 20h14"/>
         </svg>
-        <h3 class="font-semibold text-p800 mb-2 text-sm">International logistics</h3>
+        <h3 class="font-semibold text-p800 mb-1.5 text-sm">International logistics</h3>
         <p class="text-muted text-sm leading-relaxed">We coordinate the full logistics chain from origin to destination, with experienced freight and shipping partners.</p>
       </div>
 
-      <div class="card-accent rounded-2xl border border-line bg-white p-7 reveal d2">
-        <svg class="mb-4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <div class="card-accent rounded-2xl border border-line bg-white p-5 reveal d2">
+        <svg class="mb-3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>
         </svg>
-        <h3 class="font-semibold text-p800 mb-2 text-sm">Customized commercial offers</h3>
+        <h3 class="font-semibold text-p800 mb-1.5 text-sm">Customized commercial offers</h3>
         <p class="text-muted text-sm leading-relaxed">Each proposal is built from the buyer's specifications — grade, Incoterm, packaging, labelling.</p>
       </div>
 
-      <div class="card-accent rounded-2xl border border-line bg-white p-7 reveal d3">
-        <svg class="mb-4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <div class="card-accent rounded-2xl border border-line bg-white p-5 reveal d3">
+        <svg class="mb-3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#134653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
         </svg>
-        <h3 class="font-semibold text-p800 mb-2 text-sm">Professional commercial support</h3>
+        <h3 class="font-semibold text-p800 mb-1.5 text-sm">Professional commercial support</h3>
         <p class="text-muted text-sm leading-relaxed">Direct, responsive support throughout the enquiry, negotiation, contracting and shipment process.</p>
       </div>
     </div>
@@ -718,9 +770,78 @@
 </section>
 
 <!-- ================================================================
-     8. REQUEST AN OFFER
+     8. FAQ
      ================================================================ -->
-<section id="contact" class="bg-mist py-24" aria-labelledby="contact-heading">
+<section id="faq" class="bg-mist py-20" aria-labelledby="faq-heading">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="text-center mb-12">
+      <p class="eyebrow reveal mb-3">Frequently asked questions</p>
+      <div class="flex justify-center mb-6 reveal d1"><div class="metal-bar h-0.5 w-12"></div></div>
+      <h2 id="faq-heading" class="reveal d1 font-bold text-p900 leading-tight"
+          style="font-size: clamp(1.5rem, 3vw, 2.2rem); letter-spacing: -0.015em;">
+        Common questions from buyers
+      </h2>
+    </div>
+
+    <div class="reveal d2">
+
+      <details class="faq-item">
+        <summary>
+          Is Abraxas Group a mill, a producer, or a trading company?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5F7278" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq-body">We are an international business developer. Abraxas Group is not a mill, a producer, or a manufacturer. We operate as a commercial intermediary, connecting qualified international buyers with established Argentine export capacity and coordinating the full commercial and logistical framework of each operation — from the initial enquiry through to contract and shipment.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          Is there a minimum order volume?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5F7278" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq-body">Volume per operation is agreed individually with each buyer, based on their actual demand and logistics requirements. We do not publish a fixed minimum. Please include your target volume in your enquiry and we will confirm feasibility.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          Which Incoterms do you work with?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5F7278" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq-body">We structure offers under <strong>FOB</strong>, <strong>CFR</strong>, or <strong>CIF</strong> (Incoterms® 2020). The commercial condition is selected by the buyer according to their preference and operational requirements, and confirmed as part of the quotation.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          How long does it take to receive a commercial offer?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5F7278" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq-body">Once we have the buyer's complete specifications — grade, volume, destination port, Incoterm, packaging, and delivery schedule — we typically issue a commercial proposal within a few business days. More complex or large-volume operations may require additional time for validation with the supply chain.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          Can you provide a sample or a Certificate of Analysis?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5F7278" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq-body">Sample availability and technical documentation — including Certificates of Analysis — are confirmed at the time of enquiry. These are provided as part of the commercial process once the buyer's requirements are confirmed.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          How do I start the process?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5F7278" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq-body">Fill in the enquiry form on this page or contact us directly by email or WhatsApp. Include as much detail as possible about your requirement: technical specifications, volume, destination port, and preferred Incoterm. We will follow up with any clarifying questions and, once we have all the information needed, issue a tailored commercial offer.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     9. REQUEST AN OFFER
+     ================================================================ -->
+<section id="contact" class="bg-white py-20" aria-labelledby="contact-heading">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid lg:grid-cols-2 gap-14">
 
@@ -732,8 +853,11 @@
             style="font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: -0.015em;">
           Tell us about your requirement
         </h2>
-        <p class="reveal d2 text-muted text-sm leading-relaxed mb-8">
+        <p class="reveal d2 text-muted text-sm leading-relaxed mb-2">
           To issue a precise commercial offer, we ask the buyer to provide the following: technical specifications, annual demand, shipment quantity, destination port, Incoterm, packaging and delivery schedule.
+        </p>
+        <p class="reveal d2 text-muted text-sm leading-relaxed mb-8">
+          We aim to respond to all enquiries within <strong class="text-p800 font-semibold">48 business hours</strong>.
         </p>
 
         <!-- Contact card -->
@@ -758,7 +882,7 @@
           </div>
           <div class="info-row">
             <span class="info-label">Website</span>
-            <span class="info-value"><a href="https://abraxas-group.lat">abraxas-group.lat</a></span>
+            <span class="info-value"><a href="https://www.abraxas-group.lat">abraxas-group.lat</a></span>
           </div>
 
           <!-- Quick action buttons -->
@@ -779,6 +903,18 @@
               Send email
             </a>
           </div>
+
+          <!-- Dossier -->
+          <div class="pt-3 border-t border-line">
+            <!-- Activate once assets/abraxas-wheat-flour-dossier.pdf is uploaded -->
+            <a href="assets/abraxas-wheat-flour-dossier.pdf" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-p700 transition-colors">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 13h12M8 2v8M5 7l3 4 3-4"/>
+              </svg>
+              Download product dossier (PDF)
+            </a>
+          </div>
         </div>
       </div>
 
@@ -787,11 +923,6 @@
         <div class="card-accent rounded-2xl border border-line bg-white p-8">
           <h3 class="font-semibold text-p800 mb-6 text-base">Request a commercial offer</h3>
 
-          <!--
-            FORMSPREE: replace the action URL below with your endpoint.
-            Sign up at formspree.io → New Form → copy the endpoint URL.
-            Example: https://formspree.io/f/abcdefgh
-          -->
           <form id="offer-form" action="https://formspree.io/f/xwvdoagg" method="POST" novalidate>
             <input type="hidden" name="_subject" value="Wheat Flour Enquiry — Abraxas Group">
             <!-- Honeypot anti-spam -->
@@ -847,7 +978,10 @@
                 </div>
 
                 <p class="text-xs text-muted text-center mt-3">
-                  Or email us directly at
+                  We use your details only to respond to your enquiry.
+                </p>
+                <p class="text-xs text-muted text-center mt-1">
+                  Or email us at
                   <a href="mailto:o.chinchilla@abraxas-group.lat" class="text-p700 font-medium hover:underline">o.chinchilla@abraxas-group.lat</a>
                 </p>
               </div>
@@ -890,11 +1024,12 @@
       <div>
         <p class="eyebrow eyebrow-light mb-5" style="opacity:0.6;">Navigation</p>
         <ul class="space-y-2.5">
-          <li><a href="#about"   class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">Who we are</a></li>
-          <li><a href="#product" class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">The product</a></li>
-          <li><a href="#supply"  class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">Supply framework</a></li>
-          <li><a href="#process" class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">Commercial process</a></li>
-          <li><a href="#contact" class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">Request an offer</a></li>
+          <li><a href="#about"      class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">Who we are</a></li>
+          <li><a href="#product"    class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">The product</a></li>
+          <li><a href="#supply"     class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">Supply framework</a></li>
+          <li><a href="#process"    class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">Commercial process</a></li>
+          <li><a href="#faq"        class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">FAQ</a></li>
+          <li><a href="#contact"    class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">Request an offer</a></li>
         </ul>
       </div>
 
@@ -905,7 +1040,7 @@
           <li><a href="mailto:o.chinchilla@abraxas-group.lat" class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">o.chinchilla@abraxas-group.lat</a></li>
           <li><a href="tel:+543417400299" class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">+54 341 740 0299</a></li>
           <li><span class="text-steel-soft text-xs" style="opacity:0.7;">Oscar Chinchilla</span></li>
-          <li><a href="https://abraxas-group.lat" class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">abraxas-group.lat</a></li>
+          <li><a href="https://www.abraxas-group.lat" class="text-steel-soft text-xs hover:text-white transition-colors" style="opacity:0.85;">abraxas-group.lat</a></li>
         </ul>
       </div>
     </div>
